@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Ajude a financiar o DJI Mini 5 Pro Fly More Combo Plus — o drone que vai revolucionar o conteúdo da galera. 62,4% da meta atingida!"
+      content="Ajude a financiar o DJI Mini 5 Pro Fly More Combo Plus — o drone que vai revolucionar o conteúdo da galera. 87,0% da meta atingida!"
     />
     <title>🚁 Missão Drone — DJI Mini 5 Pro para o Diego</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1032,6 +1032,132 @@
         box-shadow: 0 0 12px rgba(0, 255, 135, 0.3);
       }
 
+      /* ─── URGENCY BANNER ────────────────────────────────────────── */
+      #urgency-banner {
+        position: fixed;
+        top: 56px; /* abaixo do nav fixo */
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        background: linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+        background-size: 200% 100%;
+        animation:
+          urgency-slide 3s ease infinite,
+          urgency-pulse 1.2s ease-in-out infinite;
+        padding: 14px 52px 14px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-shadow: 0 4px 24px rgba(220, 38, 38, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        cursor: default;
+        opacity: 0;
+        transform: translateY(-100%);
+        pointer-events: none;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+      }
+      #urgency-banner.ub-visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      @keyframes urgency-slide {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes urgency-pulse {
+        0%,
+        100% {
+          box-shadow: 0 4px 24px rgba(220, 38, 38, 0.5);
+        }
+        50% {
+          box-shadow: 0 4px 40px rgba(220, 38, 38, 0.9);
+        }
+      }
+      #urgency-banner .ub-icon {
+        font-size: 22px;
+        animation: ub-blink 0.7s step-start infinite;
+        flex-shrink: 0;
+      }
+      @keyframes ub-blink {
+        0%,
+        49% {
+          opacity: 1;
+        }
+        50%,
+        100% {
+          opacity: 0;
+        }
+      }
+      #urgency-banner .ub-text {
+        flex: 1;
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.5;
+      }
+      #urgency-banner .ub-text strong {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      #urgency-banner .ub-text em {
+        font-style: normal;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-weight: 700;
+      }
+      #urgency-banner .ub-close {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      #urgency-banner .ub-close:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      body.ub-closed #urgency-banner {
+        display: none;
+      }
+
+      @media (max-width: 720px) {
+        #urgency-banner {
+          top: 56px;
+          padding: 10px 44px 10px 14px;
+          gap: 10px;
+        }
+        #urgency-banner .ub-icon {
+          font-size: 18px;
+        }
+        #urgency-banner .ub-text {
+          font-size: 12px;
+        }
+      }
+
       /* ─── FOOTER ─────────────────────────────────────────────────── */
       footer {
         padding: 48px 0 32px;
@@ -1299,8 +1425,33 @@
 ═══════════════════════════════════════════════════════════ -->
     <div class="ann-bar">
       🚨 URGENTE: Faltam <strong id="ann-days">—</strong> dias para o
-      aniversário &bull; Meta <strong>62,4%</strong> atingida &bull;
+      aniversário &bull; Meta <strong>87,0%</strong> atingida &bull;
       <a href="#plans">Apoie agora →</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     URGENCY BANNER
+═══════════════════════════════════════════════════════════ -->
+    <div id="urgency-banner">
+      <span class="ub-icon">🚨</span>
+      <div class="ub-text">
+        <strong>Atenção — as coisas estão indo rápidas demais!</strong>
+        Hoje mesmo podemos bater a meta. Se isso acontecer
+        <em>hoje ou amanhã</em>, o drone pode estar disponível no
+        <em>final de semana</em>. Não fique de fora.
+        <a
+          href="#plans"
+          style="color: #ffd700; font-weight: 800; margin-left: 6px"
+          >Apoiar agora →</a
+        >
+      </div>
+      <button
+        class="ub-close"
+        onclick="document.body.classList.add('ub-closed')"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
@@ -1354,7 +1505,7 @@
           </h1>
 
           <p class="hero-sub fade-in">
-            Seu amigo Diego está a <strong>R$&nbsp;4.880</strong> de criar os
+            Seu amigo Diego está a <strong>R$&nbsp;1.684</strong> de criar os
             melhores conteúdos de surf e natureza que vocês já viram. Seja parte
             dessa história.
           </p>
@@ -1378,15 +1529,15 @@
 
           <div class="hero-stats fade-in">
             <div class="hstat glass">
-              <div class="hstat-val gradient-text">R$&nbsp;8.110</div>
+              <div class="hstat-val gradient-text">R$&nbsp;11.306</div>
               <div class="hstat-lbl">Arrecadado</div>
             </div>
             <div class="hstat glass">
-              <div class="hstat-val gradient-text">62,4%</div>
+              <div class="hstat-val gradient-text">87,0%</div>
               <div class="hstat-lbl">Da meta</div>
             </div>
             <div class="hstat glass">
-              <div class="hstat-val" style="color: #ff6b6b">R$&nbsp;4.880</div>
+              <div class="hstat-val" style="color: #ff6b6b">R$&nbsp;1.684</div>
               <div class="hstat-lbl">Faltando</div>
             </div>
           </div>
@@ -1403,14 +1554,14 @@
           <span class="tag tag-blue">📊 Progresso da Campanha</span>
           <h2>Quase lá. <span class="gradient-text">Muito quase.</span></h2>
           <p>
-            Cada real conta. Literalmente — precisamos de mais R$&nbsp;4.880
+            Cada real conta. Literalmente — precisamos de mais R$&nbsp;1.684
             para decolar de vez.
           </p>
         </div>
 
         <div class="prog-stats">
           <div class="pstat glass fade-in">
-            <div class="pstat-val gradient-text">R$&nbsp;8.110</div>
+            <div class="pstat-val gradient-text">R$&nbsp;11.306</div>
             <div class="pstat-lbl">Total Arrecadado</div>
           </div>
           <div
@@ -1423,7 +1574,7 @@
             <div class="pstat-lbl">Da Meta Atingida</div>
           </div>
           <div class="pstat glass fade-in">
-            <div class="pstat-val" style="color: #ff6b6b">R$&nbsp;4.880</div>
+            <div class="pstat-val" style="color: #ff6b6b">R$&nbsp;1.684</div>
             <div class="pstat-lbl">Restante Para o Drone</div>
           </div>
         </div>
@@ -1436,7 +1587,7 @@
 
         <div class="prog-labels">
           <span>R$&nbsp;0</span>
-          <span class="prog-pct" id="prog-label">62,4% atingido</span>
+          <span class="prog-pct" id="prog-label">87,0% atingido</span>
           <span>🎯 Meta: R$&nbsp;12.990</span>
         </div>
       </div>
@@ -1779,7 +1930,7 @@
           <div class="supp-card glass fade-in">
             <div class="supp-avatar av-named">TM</div>
             <div class="supp-info">
-              <div class="supp-name">Tabata Mora</div>
+              <div class="supp-name">Tabata Romário</div>
               <div class="supp-amt">R$&nbsp;1.800,00</div>
             </div>
             <div class="supp-emoji">💚</div>
@@ -1792,33 +1943,36 @@
             </div>
             <div class="supp-emoji">🌊</div>
           </div>
+          <!-- New named supporters -->
+          <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">US</div>
+            <div class="supp-info">
+              <div class="supp-name">Uriel Surfe</div>
+              <div class="supp-amt">R$&nbsp;999,00</div>
+            </div>
+            <div class="supp-emoji">🏄</div>
+          </div>
+          <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">CS</div>
+            <div class="supp-info">
+              <div class="supp-name">Camila Surfe</div>
+              <div class="supp-amt">R$&nbsp;299,00</div>
+            </div>
+            <div class="supp-emoji">🤙</div>
+          </div>
           <!-- Anonymous supporters -->
           <div class="supp-card glass fade-in">
             <div class="supp-avatar av-anon">?</div>
             <div class="supp-info">
               <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;1.000,00</div>
+              <div class="supp-amt blur">R$&nbsp;1.299,00</div>
             </div>
           </div>
           <div class="supp-card glass fade-in">
             <div class="supp-avatar av-anon">?</div>
             <div class="supp-info">
               <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
+              <div class="supp-amt blur">R$&nbsp;599,00</div>
             </div>
           </div>
           <div class="supp-card glass fade-in">
@@ -1945,7 +2099,7 @@
               </li>
               <li class="sarcasm">
                 <span class="fi no">✗</span
-                ><span>Qualquer outra coisa que exista no mundo</span>
+                ><span>Seu score vai ficar negativo comigo</span>
               </li>
             </ul>
             <div class="plan-scarcity" style="color: var(--muted)">
@@ -2217,6 +2371,14 @@
                 <span class="fi yes" style="color: #ff69b4">✓</span
                 ><span>Só não venha com mixaria pro meu lado</span>
               </li>
+              <li>
+                <span class="fi yes" style="color: #ff69b4">✓</span
+                ><span
+                  >Dependendo do valor, posso criar um
+                  <strong>site ou landing page</strong> pro seu negócio — quem
+                  sabe você tem tanto sucesso quanto eu 😅</span
+                >
+              </li>
             </ul>
             <div class="plan-scarcity" style="color: #ff69b4">
               ✦ Entre em contato para montar
@@ -2335,11 +2497,12 @@
             </div>
             <div class="faq-a">
               Boa pergunta. Esse valor não é coincidência. O Matheus topou
-              encarar mais de 9 horas de avião até o México — só pra contrabandear ops... comprar o
-              drone mais barato lá e trazer de volta. Nobre? Sim. Suspeito?
-              Talvez. A Receita Federal ficou sabendo? #Descubra. O fato é: ele
-              chegou, o drone não. Mas a contribuição ficou. Seja como o
-              Matheus — só que sem o risco de ser detido no aeroporto. 🛃✈️🇲🇽
+              encarar mais de 9 horas de avião até o México — só pra
+              contrabandear ops... comprar o drone mais barato lá e trazer de
+              volta. Nobre? Sim. Suspeito? Talvez. A Receita Federal ficou
+              sabendo? #Descubra. O fato é: ele chegou, o drone não. Mas a
+              contribuição ficou. Seja como o Matheus — só que sem o risco de
+              ser detido no aeroporto. 🛃✈️🇲🇽
             </div>
           </div>
 
@@ -2361,6 +2524,23 @@
 
           <div class="faq-item glass" onclick="toggleFaq(this)">
             <div class="faq-q">
+              <span
+                >Existe alguma possibilidade de conseguir cupom de
+                desconto?</span
+              >
+              <span class="faq-ico">+</span>
+            </div>
+            <div class="faq-a">
+              Sim, em exatamente 3 situações: se você já competiu contra algum
+              campeão mundial de surf, se você não é furão e toda vez que fala
+              que vai surfar realmente aparece (ou seja, tem score alto comigo)
+              — ou se souber qual é o sabor do bolo de aniversário que eu quero
+              este ano. Simples assim. 🎂🏄‍♂️
+            </div>
+          </div>
+
+          <div class="faq-item glass" onclick="toggleFaq(this)">
+            <div class="faq-q">
               <span>Por que não compra com seu próprio dinheiro?</span>
               <span class="faq-ico">+</span>
             </div>
@@ -2370,18 +2550,6 @@
               comprar um drone épico é, sem sombra de dúvida, um objetivo nobre.
               Além disso, assim você faz parte da história. É participativo. É
               democrático. É uma experiência imersiva.
-            </div>
-          </div>
-
-          <div class="faq-item glass" onclick="toggleFaq(this)">
-            <div class="faq-q">
-              <span>Como funciona o pagamento?</span>
-              <span class="faq-ico">+</span>
-            </div>
-            <div class="faq-a">
-              Clique em qualquer botão de plano — vai abrir o WhatsApp e a gente
-              combina. Pix, transferência, TED — somos muito flexíveis quando o
-              assunto é receber dinheiro.
             </div>
           </div>
 
@@ -2409,6 +2577,18 @@
               tamanho 6. Mas estarão lá.
             </div>
           </div>
+
+          <div class="faq-item glass" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>Como funciona o pagamento?</span>
+              <span class="faq-ico">+</span>
+            </div>
+            <div class="faq-a">
+              Clique em qualquer botão de plano — vai abrir o WhatsApp e a gente
+              combina. Pix, transferência, TED — somos muito flexíveis quando o
+              assunto é receber dinheiro.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2427,10 +2607,35 @@
           10 de Maio.<br />
           <span class="gradient-text">Faltam poucos dias.</span>
         </h2>
-        <div style="display:inline-flex;align-items:flex-start;gap:10px;background:rgba(0,255,135,.08);border:1px solid rgba(0,255,135,.25);border-radius:12px;padding:12px 16px;margin:16px 0 8px;max-width:520px;text-align:left;">
-          <span style="font-size:18px;line-height:1;margin-top:1px;">💡</span>
-          <p style="margin:0;font-size:13px;color:var(--muted);line-height:1.6;">
-            <strong style="color:var(--green);">Se a meta for atingida antes do aniversário, o drone chega antes.</strong>
+        <div
+          style="
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(0, 255, 135, 0.08);
+            border: 1px solid rgba(0, 255, 135, 0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 16px 0 8px;
+            max-width: 520px;
+            text-align: left;
+          "
+        >
+          <span style="font-size: 18px; line-height: 1; margin-top: 1px"
+            >💡</span
+          >
+          <p
+            style="
+              margin: 0;
+              font-size: 13px;
+              color: var(--muted);
+              line-height: 1.6;
+            "
+          >
+            <strong style="color: var(--green)"
+              >Se a meta for atingida antes do aniversário, o drone chega
+              antes.</strong
+            >
             Cada real a mais acelera a decolagem. Literalmente.
           </p>
         </div>
@@ -2527,8 +2732,8 @@
 
       /* ─── DADOS DA CAMPANHA ─────────────────────────────────── */
       const GOAL = 12990;
-      const RAISED = 8110;
-      const PERCENT = (RAISED / GOAL) * 100; // ≈ 62.43%
+      const RAISED = 11306;
+      const PERCENT = (RAISED / GOAL) * 100; // ≈ 87.0%
       const BIRTHDAY = new Date("2026-05-10T00:00:00");
 
       /* ─── WHATSAPP ──────────────────────────────────────────── */
@@ -2692,6 +2897,14 @@
         showToast();
         setInterval(showToast, 11000);
       }, 4000);
+
+      /* ─── URGENCY BANNER DELAY ──────────────────────────────── */
+      setTimeout(() => {
+        const ub = document.getElementById("urgency-banner");
+        if (ub && !document.body.classList.contains("ub-closed")) {
+          ub.classList.add("ub-visible");
+        }
+      }, 3000);
 
       /* ─── NAV SCROLL EFFECT ─────────────────────────────────── */
       const nav = document.getElementById("main-nav");
