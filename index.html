@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Ajude a financiar o DJI Mini 5 Pro Fly More Combo Plus — o drone que vai revolucionar o conteúdo da galera. 87,0% da meta atingida!"
+      content="🎉 META ATINGIDA E SUPERADA! DJI Mini 5 Pro Fly More Combo Plus — R$ 14.389 arrecadados de uma meta de R$ 12.990. Lista de espera aberta para o segundo lançamento!"
     />
     <title>🚁 Missão Drone — DJI Mini 5 Pro para o Diego</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1039,17 +1039,17 @@
         left: 0;
         right: 0;
         z-index: 9998;
-        background: linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+        background: linear-gradient(90deg, #065f46, #047857, #065f46);
         background-size: 200% 100%;
         animation:
           urgency-slide 3s ease infinite,
-          urgency-pulse 1.2s ease-in-out infinite;
+          urgency-pulse-green 1.8s ease-in-out infinite;
         padding: 14px 52px 14px 20px;
         display: flex;
         align-items: center;
         gap: 14px;
-        box-shadow: 0 4px 24px rgba(220, 38, 38, 0.5);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 24px rgba(0, 255, 135, 0.3);
+        border-bottom: 1px solid rgba(0, 255, 135, 0.3);
         cursor: default;
         opacity: 0;
         transform: translateY(-100%);
@@ -1081,6 +1081,15 @@
         }
         50% {
           box-shadow: 0 4px 40px rgba(220, 38, 38, 0.9);
+        }
+      }
+      @keyframes urgency-pulse-green {
+        0%,
+        100% {
+          box-shadow: 0 4px 24px rgba(0, 255, 135, 0.3);
+        }
+        50% {
+          box-shadow: 0 4px 40px rgba(0, 255, 135, 0.6);
         }
       }
       #urgency-banner .ub-icon {
@@ -1235,6 +1244,67 @@
       }
       .pulse {
         animation: pulse-glow 3s ease-in-out infinite;
+      }
+
+      /* ─── SOLD-OUT / WAITLIST BUTTON ────────────────────────────── */
+      .btn-sold-out {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: var(--muted) !important;
+        cursor: not-allowed !important;
+        opacity: 0.65;
+        box-shadow: none !important;
+        pointer-events: none;
+      }
+      .btn-sold-out:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
+      .btn-waitlist {
+        background: linear-gradient(135deg, var(--gold), #e07b00);
+        color: #000;
+        box-shadow: 0 0 30px rgba(255, 179, 0, 0.3);
+      }
+      .btn-waitlist:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 50px rgba(255, 179, 0, 0.55);
+      }
+
+      /* ─── SUCCESS BANNER ─────────────────────────────────────────── */
+      .success-banner {
+        background: linear-gradient(135deg, rgba(0, 255, 135, 0.1), rgba(0, 102, 255, 0.08));
+        border: 1px solid rgba(0, 255, 135, 0.35);
+        border-radius: 20px;
+        padding: 32px 40px;
+        text-align: center;
+        margin: 0 auto 0;
+        max-width: 900px;
+      }
+      .success-banner h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(22px, 3.5vw, 34px);
+        font-weight: 800;
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+      .success-banner p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.75;
+        max-width: 640px;
+        margin: 0 auto 24px;
+      }
+
+      /* ─── THANK YOU STRIP ────────────────────────────────────────── */
+      .ty-strip {
+        background: linear-gradient(90deg, var(--green), var(--blue2), var(--green));
+        background-size: 200% auto;
+        animation: slide-grad 4s linear infinite;
+        padding: 18px 24px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 800;
+        color: #000;
       }
 
       /* ─── MOBILE ─────────────────────────────────────────────────── */
@@ -1424,25 +1494,23 @@
      ANNOUNCEMENT BAR
 ═══════════════════════════════════════════════════════════ -->
     <div class="ann-bar">
-      🚨 URGENTE: Faltam <strong id="ann-days">—</strong> dias para o
-      aniversário &bull; Meta <strong>87,0%</strong> atingida &bull;
-      <a href="#plans">Apoie agora →</a>
+      🎉 META ATINGIDA E SUPERADA! &bull; R$&nbsp;14.389 arrecadados &bull; Vagas esgotadas &bull;
+      <a href="#waitlist-section">Lista de espera →</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
      URGENCY BANNER
 ═══════════════════════════════════════════════════════════ -->
     <div id="urgency-banner">
-      <span class="ub-icon">🚨</span>
+      <span class="ub-icon">🎉</span>
       <div class="ub-text">
-        <strong>Atenção — as coisas estão indo rápidas demais!</strong>
-        Hoje mesmo podemos bater a meta. Se isso acontecer
-        <em>hoje ou amanhã</em>, o drone pode estar disponível no
-        <em>final de semana</em>. Não fique de fora.
+        <strong>Meta atingida e superada!</strong>
+        R$&nbsp;14.389 arrecadados. Todas as vagas foram preenchidas.
+        <em>Segundo lançamento</em> confirmado — entre na lista de espera agora.
         <a
-          href="#plans"
+          href="#waitlist-section"
           style="color: #ffd700; font-weight: 800; margin-left: 6px"
-          >Apoiar agora →</a
+          >Lista de espera →</a
         >
       </div>
       <button
@@ -1469,11 +1537,11 @@
             <li><a href="#faq">FAQ</a></li>
           </ul>
           <a
-            href="#plans"
-            class="btn btn-primary pulse"
+            href="#waitlist-section"
+            class="btn btn-waitlist pulse"
             style="font-size: 14px; padding: 10px 22px"
           >
-            Apoiar Agora ⚡
+            Lista de Espera 📋
           </a>
         </div>
       </div>
@@ -1495,29 +1563,28 @@
         <div class="hero-content">
           <div class="fade-in">
             <span class="tag tag-green"
-              >✦ Aniversário 10 de Maio de 2026 ✦</span
+              >🎉 Meta Atingida e Superada — 110,7% ✦</span
             >
           </div>
 
           <h1 class="hero-title fade-in">
-            Uma contribuição pequena.<br />
-            <span class="gradient-text">Um voo gigante.</span>
+            Missão cumprida.<br />
+            <span class="gradient-text">O drone vai voar.</span>
           </h1>
 
           <p class="hero-sub fade-in">
-            Seu amigo Diego está a <strong>R$&nbsp;1.684</strong> de criar os
-            melhores conteúdos de surf e natureza que vocês já viram. Seja parte
-            dessa história.
+            Missão cumprida! Meta batida e superada — <strong>R$&nbsp;14.389</strong> arrecadados.
+            O drone está a caminho. Obrigado a todos que tornaram isso possível. ✈️
           </p>
 
           <div class="hero-btns fade-in">
-            <a
-              href="#plans"
-              class="btn btn-primary pulse"
+            <button
+              onclick="openWaitlistWhatsApp()"
+              class="btn btn-waitlist pulse"
               style="font-size: 17px; padding: 18px 38px"
             >
-              🚀 Quero Apoiar
-            </a>
+              📋 Entrar na Lista de Espera
+            </button>
             <a
               href="#drone"
               class="btn btn-outline"
@@ -1529,16 +1596,16 @@
 
           <div class="hero-stats fade-in">
             <div class="hstat glass">
-              <div class="hstat-val gradient-text">R$&nbsp;11.306</div>
+              <div class="hstat-val gradient-text">R$&nbsp;14.389</div>
               <div class="hstat-lbl">Arrecadado</div>
             </div>
             <div class="hstat glass">
-              <div class="hstat-val gradient-text">87,0%</div>
-              <div class="hstat-lbl">Da meta</div>
+              <div class="hstat-val gradient-text">110,7%</div>
+              <div class="hstat-lbl">Da meta atingida</div>
             </div>
             <div class="hstat glass">
-              <div class="hstat-val" style="color: #ff6b6b">R$&nbsp;1.684</div>
-              <div class="hstat-lbl">Faltando</div>
+              <div class="hstat-val" style="color: var(--green)">✅ Superada!</div>
+              <div class="hstat-lbl">Meta: R$&nbsp;12.990</div>
             </div>
           </div>
         </div>
@@ -1546,36 +1613,44 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
+     THANK YOU STRIP
+═══════════════════════════════════════════════════════════ -->
+    <div class="ty-strip">
+      🏆 META BATIDA! Muito obrigado a todos os apoiadores que tornaram isso possível. Os verdadeiros eu sei quem são!!! 🚁✨
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
      PROGRESS SECTION
 ═══════════════════════════════════════════════════════════ -->
     <section class="progress-sec" id="progress">
+      <div id="waitlist-section"></div>
       <div class="container">
         <div class="sec-header">
-          <span class="tag tag-blue">📊 Progresso da Campanha</span>
-          <h2>Quase lá. <span class="gradient-text">Muito quase.</span></h2>
+          <span class="tag tag-green">📊 Resultado da Campanha</span>
+          <h2>Meta batida. <span class="gradient-text">E ainda superada.</span></h2>
           <p>
-            Cada real conta. Literalmente — precisamos de mais R$&nbsp;1.684
-            para decolar de vez.
+            R$&nbsp;14.389 arrecadados de uma meta de R$&nbsp;12.990.
+            Vocês são incríveis — o drone está a caminho! 🚁
           </p>
         </div>
 
         <div class="prog-stats">
-          <div class="pstat glass fade-in">
-            <div class="pstat-val gradient-text">R$&nbsp;11.306</div>
+          <div class="pstat glass fade-in" style="border-color: rgba(0, 255, 135, 0.25)">
+            <div class="pstat-val gradient-text">R$&nbsp;14.389</div>
             <div class="pstat-lbl">Total Arrecadado</div>
           </div>
           <div
             class="pstat glass fade-in"
-            style="border-color: rgba(0, 255, 135, 0.25)"
+            style="border-color: rgba(0, 255, 135, 0.35)"
           >
             <div class="pstat-val" style="color: var(--green)" id="pct-display">
               0%
             </div>
             <div class="pstat-lbl">Da Meta Atingida</div>
           </div>
-          <div class="pstat glass fade-in">
-            <div class="pstat-val" style="color: #ff6b6b">R$&nbsp;1.684</div>
-            <div class="pstat-lbl">Restante Para o Drone</div>
+          <div class="pstat glass fade-in" style="border-color: rgba(0, 255, 135, 0.25)">
+            <div class="pstat-val" style="color: var(--green)">+R$&nbsp;1.399</div>
+            <div class="pstat-lbl">Acima da Meta 🏆</div>
           </div>
         </div>
 
@@ -1587,8 +1662,117 @@
 
         <div class="prog-labels">
           <span>R$&nbsp;0</span>
-          <span class="prog-pct" id="prog-label">87,0% atingido</span>
-          <span>🎯 Meta: R$&nbsp;12.990</span>
+          <span class="prog-pct" id="prog-label">110,7% atingido 🎉</span>
+          <span>🏆 Meta: R$&nbsp;12.990 ✓ SUPERADA</span>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px">
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 16px">
+            Perdeu as vagas? Um segundo lançamento está sendo planejado.
+          </p>
+          <button
+            onclick="openWaitlistWhatsApp()"
+            class="btn btn-waitlist pulse"
+            style="font-size: 15px; padding: 14px 36px"
+          >
+            📋 Entrar na Lista de Espera
+          </button>
+          <p style="font-size: 11px; color: var(--muted); margin-top: 10px; opacity: 0.7">
+            A mensagem já vem preenchida. Você sabe o que espera. 😈
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     CHURRASCO SECTION
+═══════════════════════════════════════════════════════════ -->
+    <section style="padding: 80px 0; background: var(--bg3)">
+      <div class="container">
+        <div
+          class="glass fade-in"
+          style="
+            border-radius: 24px;
+            border-color: rgba(255, 179, 0, 0.35);
+            background: linear-gradient(135deg, rgba(255, 179, 0, 0.06), rgba(255, 100, 0, 0.04));
+            padding: 52px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <!-- decorative glow -->
+          <div style="
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,179,0,0.1) 0%, transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+          "></div>
+
+          <div style="position: relative">
+            <span class="tag tag-gold" style="margin-bottom: 24px; display: inline-flex; font-size: 13px">
+              🍖 Bônus da Campanha
+            </span>
+            <h2
+              style="
+                font-family: 'Space Grotesk', sans-serif;
+                font-size: clamp(28px, 4.5vw, 52px);
+                font-weight: 900;
+                line-height: 1.15;
+                margin-bottom: 20px;
+              "
+            >
+              Os <span style="color: var(--gold)">R$&nbsp;1.399</span> que<br />
+              sobraram viram <span class="gradient-text">churrasco.</span>
+            </h2>
+
+            <p style="color: var(--muted); font-size: 16px; max-width: 640px; margin: 0 auto 20px; line-height: 1.85">
+              O montante que superou a meta não vai ficar parado. Vai direto para
+              a churrasqueira. Os apoiadores que acreditaram na campanha serão convidados —
+              porque quem apostou merece comer bem.
+            </p>
+
+            <div
+              style="
+                display: inline-flex;
+                align-items: flex-start;
+                gap: 12px;
+                background: rgba(255, 68, 68, 0.08);
+                border: 1px solid rgba(255, 68, 68, 0.25);
+                border-radius: 14px;
+                padding: 16px 22px;
+                max-width: 620px;
+                text-align: left;
+                margin: 0 auto 32px;
+              "
+            >
+              <span style="font-size: 22px; flex-shrink: 0; margin-top: 2px">⚠️</span>
+              <p style="margin: 0; font-size: 14px; color: var(--muted); line-height: 1.75">
+                <strong style="color: #ff7070; display: block; margin-bottom: 4px">
+                  Quem não apoiou a campanha, não vai ao churrasco.
+                </strong>
+                Se você não priorizou a campanha, eu também não vou te priorizar na lista de convidados.
+                Simples assim. A carne é boa, mas é só pra quem realmente esteve do lado certo da história.
+                Os verdadeiros eu sei quem são — e vocês também sabem. 😈🥩
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: center">
+              <div class="glass" style="padding: 18px 28px; border-radius: 14px; border-color: rgba(255, 179, 0, 0.3); text-align: center; min-width: 140px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 900; color: var(--gold)">R$&nbsp;1.399</div>
+                <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px">Convertidos em churrasco</div>
+              </div>
+              <div style="font-size: 32px; color: var(--muted)">→</div>
+              <div class="glass" style="padding: 18px 28px; border-radius: 14px; border-color: rgba(255, 179, 0, 0.3); text-align: center; min-width: 140px">
+                <div style="font-size: 36px">🍖🔥🥩</div>
+                <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px">Só pra quem apoiou</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1621,7 +1805,7 @@
           </div>
         </div>
         <p class="cd-sub">
-          🏄 10 de Maio de 2026 — O dia D. O aniversário. A decolagem.
+          🎂 10 de Maio de 2026 — O aniversário. O drone confirmado. O churrasco garantido.
         </p>
       </div>
     </section>
@@ -1909,16 +2093,16 @@
         <div class="sec-header">
           <span class="tag tag-green">❤️ Comunidade</span>
           <h2>
-            Seus amigos já<br /><span class="gradient-text">estão dentro.</span>
+            Os verdadeiros<br /><span class="gradient-text">já estavam dentro.</span>
           </h2>
           <p>
-            Não fique de fora. A galera já garantiu o lugar nessa história. Não
-            seja esse aí.
+            Meta batida graças a essa galera incrível. Cada um que apoiou fez parte dessa história.
+            Agora esses nomes ficam marcados para sempre. 🏆
           </p>
         </div>
 
         <div class="supporters-grid">
-          <!-- Named supporters -->
+          <!-- Sorted by value desc -->
           <div class="supp-card glass fade-in">
             <div class="supp-avatar av-named">MK</div>
             <div class="supp-info">
@@ -1936,15 +2120,6 @@
             <div class="supp-emoji">💚</div>
           </div>
           <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-named">LR</div>
-            <div class="supp-info">
-              <div class="supp-name">Luiza Ramos</div>
-              <div class="supp-amt">R$&nbsp;99,00</div>
-            </div>
-            <div class="supp-emoji">🌊</div>
-          </div>
-          <!-- New named supporters -->
-          <div class="supp-card glass fade-in">
             <div class="supp-avatar av-named">US</div>
             <div class="supp-info">
               <div class="supp-name">Uriel Surfe</div>
@@ -1953,12 +2128,52 @@
             <div class="supp-emoji">🏄</div>
           </div>
           <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">H</div>
+            <div class="supp-info">
+              <div class="supp-name">Hélio</div>
+              <div class="supp-amt">R$&nbsp;799,00</div>
+            </div>
+            <div class="supp-emoji">🔥</div>
+          </div>
+          <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">PB</div>
+            <div class="supp-info">
+              <div class="supp-name">Peterson B</div>
+              <div class="supp-amt">R$&nbsp;500,00</div>
+            </div>
+            <div class="supp-emoji">💪</div>
+          </div>
+          <div class="supp-card glass fade-in">
             <div class="supp-avatar av-named">CS</div>
             <div class="supp-info">
               <div class="supp-name">Camila Surfe</div>
               <div class="supp-amt">R$&nbsp;299,00</div>
             </div>
             <div class="supp-emoji">🤙</div>
+          </div>
+          <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">ER</div>
+            <div class="supp-info">
+              <div class="supp-name">Eliabe Ramos</div>
+              <div class="supp-amt">R$&nbsp;299,00</div>
+            </div>
+            <div class="supp-emoji">🌊</div>
+          </div>
+          <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">GM</div>
+            <div class="supp-info">
+              <div class="supp-name">Gabriel M</div>
+              <div class="supp-amt">R$&nbsp;299,00</div>
+            </div>
+            <div class="supp-emoji">🎯</div>
+          </div>
+          <div class="supp-card glass fade-in">
+            <div class="supp-avatar av-named">LR</div>
+            <div class="supp-info">
+              <div class="supp-name">Luiza Ramos</div>
+              <div class="supp-amt">R$&nbsp;99,00</div>
+            </div>
+            <div class="supp-emoji">🌊</div>
           </div>
           <!-- Anonymous supporters -->
           <div class="supp-card glass fade-in">
@@ -1982,41 +2197,6 @@
               <div class="supp-amt blur">R$&nbsp;****</div>
             </div>
           </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
-          <div class="supp-card glass fade-in">
-            <div class="supp-avatar av-anon">?</div>
-            <div class="supp-info">
-              <div class="supp-name">Apoiador Anônimo</div>
-              <div class="supp-amt blur">R$&nbsp;****</div>
-            </div>
-          </div>
         </div>
 
         <div
@@ -2024,18 +2204,18 @@
           style="padding: 32px; text-align: center; border-radius: 20px"
         >
           <p style="font-size: 16px; margin-bottom: 8px">
-            🔒
-            <strong>Torne-se apoiador para desbloquear todos os dados</strong>
+            🎉
+            <strong>Campanha encerrada — mas você ainda pode fazer parte!</strong>
           </p>
           <p style="color: var(--muted); font-size: 14px; margin-bottom: 24px">
-            Apoiadores têm acesso ao painel completo com todos os valores, nomes
-            e bastidores.
+            Todas as vagas do primeiro lançamento foram preenchidas. Perdeu?
+            Sem drama — entre na lista de espera para o segundo lançamento.
             <br /><em
-              >(Não tem painel — mas pareceu muito profissional colocar isso
-              aqui.)</em
+              >(Claro que a mensagem no WhatsApp já vem pronta. Você sabe o que
+              espera. 😈)</em
             >
           </p>
-          <a href="#plans" class="btn btn-primary">Quero Fazer Parte →</a>
+          <button onclick="openWaitlistWhatsApp()" class="btn btn-waitlist">Entrar na Lista de Espera 📋</button>
         </div>
       </div>
     </section>
@@ -2046,15 +2226,15 @@
     <section style="background: var(--bg2)" id="plans">
       <div class="container">
         <div class="sec-header">
-          <span class="tag tag-blue">💎 Planos &amp; Recompensas</span>
+          <span class="tag tag-red">🔒 Planos &amp; Recompensas</span>
           <h2>
-            Escolha como entrar<br /><span class="gradient-text"
-              >para a história.</span
+            Vagas esgotadas.<br /><span class="gradient-text"
+              >Campanha encerrada.</span
             >
           </h2>
           <p>
-            Cada plano é uma promessa. Algumas mais reais que outras. Você
-            decide.
+            Todos os planos estão indisponíveis. O primeiro lançamento foi um sucesso
+            completo. Para o próximo lançamento, entre na lista de espera.
           </p>
         </div>
 
@@ -2103,14 +2283,14 @@
               </li>
             </ul>
             <div class="plan-scarcity" style="color: var(--muted)">
-              ∞ vagas (infinitas mesmo)
+              🔒 Campanha encerrada
             </div>
             <button
-              class="btn btn-outline"
+              class="btn btn-sold-out"
               style="width: 100%"
-              onclick="openWhatsApp('Apoiador Moral (Gratuito)')"
+              disabled
             >
-              Apoiar Moralmente 👻
+              Vagas Esgotadas 🔒
             </button>
           </div>
 
@@ -2148,20 +2328,15 @@
                 ><span>Se quiser algo bonito, paga mais (mão de vaca 🐄)</span>
               </li>
             </ul>
-            <div class="plan-scarcity" style="color: #ff7070">
-              ⚠️ Últimas 3 vagas disponíveis
+            <div class="plan-scarcity" style="color: var(--muted)">
+              🔒 Vagas esgotadas
             </div>
             <button
-              class="btn"
-              style="
-                width: 100%;
-                background: rgba(0, 102, 255, 0.15);
-                border: 1px solid rgba(0, 102, 255, 0.3);
-                color: var(--blue2);
-              "
-              onclick="openWhatsApp('Básico — R$ 49')"
+              class="btn btn-sold-out"
+              style="width: 100%"
+              disabled
             >
-              Quero o Básico
+              Vagas Esgotadas 🔒
             </button>
           </div>
 
@@ -2206,20 +2381,15 @@
                 ><span>Precisa dar os creditos e marcar meu @</span>
               </li>
             </ul>
-            <div class="plan-scarcity" style="color: #ff7070">
-              ⚠️ Últimas 5 vagas disponíveis
+            <div class="plan-scarcity" style="color: var(--muted)">
+              🔒 Vagas esgotadas
             </div>
             <button
-              class="btn"
-              style="
-                width: 100%;
-                background: rgba(124, 58, 237, 0.12);
-                border: 1px solid rgba(124, 58, 237, 0.3);
-                color: #a78bfa;
-              "
-              onclick="openWhatsApp('Intermediário — R$ 149')"
+              class="btn btn-sold-out"
+              style="width: 100%"
+              disabled
             >
-              Quero o Intermediário
+              Vagas Esgotadas 🔒
             </button>
           </div>
 
@@ -2258,15 +2428,15 @@
                 ><span>Todo mundo vai perguntar quem filmou</span>
               </li>
             </ul>
-            <div class="plan-scarcity" style="color: #ff4444">
-              🔥 Restam apenas 2 vagas!
+            <div class="plan-scarcity" style="color: var(--muted)">
+              🔒 Vagas esgotadas
             </div>
             <button
-              class="btn btn-primary pulse"
+              class="btn btn-sold-out"
               style="width: 100%"
-              onclick="openWhatsApp('Avançado — R$ 299')"
+              disabled
             >
-              Garantir Minha Vaga ⚡
+              Vagas Esgotadas 🔒
             </button>
           </div>
 
@@ -2310,20 +2480,15 @@
                 ><span>Você vai parecer uma produtora profissional</span>
               </li>
             </ul>
-            <div class="plan-scarcity" style="color: var(--gold)">
-              👑 Apenas 1 vaga disponível
+            <div class="plan-scarcity" style="color: var(--muted)">
+              🔒 Vagas esgotadas
             </div>
             <button
-              class="btn"
-              style="
-                width: 100%;
-                background: rgba(255, 179, 0, 0.12);
-                border: 1px solid rgba(255, 179, 0, 0.3);
-                color: var(--gold);
-              "
-              onclick="openWhatsApp('Profissional — R$ 999')"
+              class="btn btn-sold-out"
+              style="width: 100%"
+              disabled
             >
-              Quero Ser Profissional 👑
+              Vagas Esgotadas 🔒
             </button>
           </div>
 
@@ -2380,20 +2545,31 @@
                 >
               </li>
             </ul>
-            <div class="plan-scarcity" style="color: #ff69b4">
-              ✦ Entre em contato para montar
+            <div class="plan-scarcity" style="color: var(--muted)">
+              🔒 Campanha encerrada
             </div>
             <button
-              class="btn"
-              style="
-                width: 100%;
-                background: rgba(255, 105, 180, 0.1);
-                border: 1px solid rgba(255, 105, 180, 0.3);
-                color: #ff69b4;
-              "
-              onclick="openWhatsApp('Custom — quero criar algo exclusivo')"
+              class="btn btn-sold-out"
+              style="width: 100%"
+              disabled
             >
-              Criar Algo Exclusivo ✨
+              Vagas Esgotadas 🔒
+            </button>
+          </div>
+        </div>
+
+        <!-- Waitlist CTA -->
+        <div class="fade-in" style="margin-top: 40px; text-align: center">
+          <div class="glass" style="padding: 32px 40px; border-radius: 20px; border-color: rgba(255, 179, 0, 0.3); background: rgba(255, 179, 0, 0.04)">
+            <p style="font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--gold)">
+              🔔 Quer garantir lugar no próximo lançamento?
+            </p>
+            <p style="color: var(--muted); font-size: 14px; margin-bottom: 24px">
+              Entre na lista de espera agora. Um segundo lançamento está sendo planejado
+              e os primeiros da fila têm prioridade garantida.
+            </p>
+            <button onclick="openWaitlistWhatsApp()" class="btn btn-waitlist pulse" style="font-size: 16px; padding: 16px 40px">
+              📋 Entrar na Lista de Espera
             </button>
           </div>
         </div>
@@ -2479,14 +2655,14 @@
 
           <div class="faq-item glass" onclick="toggleFaq(this)">
             <div class="faq-q">
-              <span>O que acontece se a meta não for atingida?</span>
+              <span>A meta foi atingida de verdade?</span>
               <span class="faq-ico">+</span>
             </div>
             <div class="faq-a">
-              Bom... eu vou ficar muito triste. Tipo olhando pro teto às 3h da
-              manhã triste. E quando você precisar de conteúdo de drone, vai
-              lembrar desse momento e vai se arrepender. Mas sejamos honestos: a
-              meta vai ser atingida. Acredite.
+              Sim. R$&nbsp;14.389 arrecadados — meta superada em 110,7%. Eu disse que
+              ia ser atingida. Acreditou? Deveria ter acreditado antes. E contribuído.
+              O drone está a caminho. Os que apostaram, agora vão aparecer no conteúdo.
+              Os que não apostaram... bem, vocês sabem.
             </div>
           </div>
 
@@ -2580,13 +2756,14 @@
 
           <div class="faq-item glass" onclick="toggleFaq(this)">
             <div class="faq-q">
-              <span>Como funciona o pagamento?</span>
+              <span>Como funciona a lista de espera?</span>
               <span class="faq-ico">+</span>
             </div>
             <div class="faq-a">
-              Clique em qualquer botão de plano — vai abrir o WhatsApp e a gente
-              combina. Pix, transferência, TED — somos muito flexíveis quando o
-              assunto é receber dinheiro.
+              Clique em qualquer botão "Lista de Espera" — vai abrir o WhatsApp com
+              uma mensagem já pré-preenchida. Você vai ter que mandar ela. Isso é parte
+              do processo. Pix, transferência, TED — ainda somos muito flexíveis quando
+              o assunto é receber dinheiro no segundo lançamento. 😈
             </div>
           </div>
         </div>
@@ -2599,13 +2776,13 @@
     <section class="final-cta" id="final">
       <div class="container">
         <span
-          class="tag tag-red"
+          class="tag tag-green"
           style="margin-bottom: 24px; display: inline-flex"
-          >⏰ Tempo limitado — Aniversário se aproximando</span
+          >🎉 Campanha encerrada com sucesso</span
         >
         <h2>
-          10 de Maio.<br />
-          <span class="gradient-text">Faltam poucos dias.</span>
+          Meta batida.<br />
+          <span class="gradient-text">Drone a caminho.</span>
         </h2>
         <div
           style="
@@ -2633,16 +2810,15 @@
             "
           >
             <strong style="color: var(--green)"
-              >Se a meta for atingida antes do aniversário, o drone chega
-              antes.</strong
+              >R$&nbsp;14.389 arrecadados — 110,7% da meta original.</strong
             >
-            Cada real a mais acelera a decolagem. Literalmente.
+            O drone está confirmado. Obrigado a todos que fizeram parte disso.
           </p>
         </div>
         <p>
-          Seus amigos já estão dentro. A barra de progresso avança todo dia.
-          Você vai ficar do lado de fora assistindo ao drone voar enquanto todo
-          mundo aparece no conteúdo?
+          Perdeu a janela? A fila de espera para o segundo lançamento já está aberta.
+          Não cometa o mesmo erro duas vezes. Dessa vez você vai ficar de fora do conteúdo olhando
+          de longe?
         </p>
         <div
           style="
@@ -2652,15 +2828,15 @@
             flex-wrap: wrap;
           "
         >
-          <a
-            href="#plans"
-            class="btn btn-primary pulse"
+          <button
+            onclick="openWaitlistWhatsApp()"
+            class="btn btn-waitlist pulse"
             style="font-size: 18px; padding: 20px 44px"
           >
-            🚀 Garantir Meu Lugar Agora
-          </a>
+            📋 Entrar na Lista de Espera
+          </button>
           <button
-            onclick="openWhatsApp('Custom — quero falar diretamente')"
+            onclick="openWaitlistWhatsApp()"
             class="btn btn-outline"
             style="font-size: 15px; padding: 20px 28px"
           >
@@ -2677,9 +2853,8 @@
             margin-right: auto;
           "
         >
-          "Últimas vagas disponíveis" — esta mensagem aparece em todas as
-          landing pages do mundo. Mas convenhamos, você sabe que dessa vez é
-          diferente.
+          "Vagas esgotadas" — desta vez é de verdade. Mas a lista de espera está
+          aberta. A mensagem já vem preenchida. Você sabe o que fazer.
         </p>
       </div>
     </section>
@@ -2699,7 +2874,7 @@
         <p>Feito com amor, sarcasmo e uma esperança genuína de voar alto. 🛸</p>
         <p>
           Aniversário: 10 de Maio de 2026 &bull;
-          <a href="#plans">Apoie agora</a>
+          <a href="#waitlist-section">Lista de espera →</a>
         </p>
         <p style="margin-top: 16px; font-size: 11px; opacity: 0.4">
           * Este é um projeto de aniversário entre amigos. Qualquer semelhança
@@ -2732,8 +2907,8 @@
 
       /* ─── DADOS DA CAMPANHA ─────────────────────────────────── */
       const GOAL = 12990;
-      const RAISED = 11306;
-      const PERCENT = (RAISED / GOAL) * 100; // ≈ 87.0%
+      const RAISED = 14389;
+      const PERCENT = (RAISED / GOAL) * 100; // ≈ 110.7%
       const BIRTHDAY = new Date("2026-05-10T00:00:00");
 
       /* ─── WHATSAPP ──────────────────────────────────────────── */
@@ -2757,6 +2932,27 @@
         window.open(url, "_blank");
       }
 
+      /* ─── WAITLIST WHATSAPP ──────────────────────────────────── */
+      const ELOGIOS_ESPERA = [
+        "visionário",
+        "lenda",
+        "mestre",
+        "gênio",
+        "ícone",
+        "iluminado",
+        "ser de luz",
+        "referência de vida",
+        "capitão da consciência",
+        "líder nato",
+      ];
+
+      function openWaitlistWhatsApp() {
+        const elogio = ELOGIOS_ESPERA[Math.floor(Math.random() * ELOGIOS_ESPERA.length)];
+        const msg = `Me desculpe meu amigo ${elogio}, errei fui moleque e não consegui adquirir o plano a tempo. Poderia me adicionar na fila de espera para o segundo lançamento? Muito obrigado!`;
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+      }
+
       /* ─── COUNTDOWN ─────────────────────────────────────────── */
       function pad(n) {
         return String(n).padStart(2, "0");
@@ -2770,7 +2966,6 @@
           ["cd-days", "cd-hours", "cd-mins", "cd-secs"].forEach((id) => {
             document.getElementById(id).textContent = "00";
           });
-          document.getElementById("ann-days").textContent = "0";
           return;
         }
 
@@ -2783,7 +2978,6 @@
         document.getElementById("cd-hours").textContent = pad(hours);
         document.getElementById("cd-mins").textContent = pad(mins);
         document.getElementById("cd-secs").textContent = pad(secs);
-        document.getElementById("ann-days").textContent = days;
       }
 
       updateCountdown();
@@ -2797,7 +2991,7 @@
       const progObs = new IntersectionObserver(
         (entries) => {
           if (entries[0].isIntersecting) {
-            progFill.style.width = PERCENT.toFixed(1) + "%";
+            progFill.style.width = Math.min(PERCENT, 100).toFixed(1) + "%";
 
             let cur = 0;
             const target = PERCENT;
@@ -2863,19 +3057,19 @@
 
       /* ─── SOCIAL PROOF TOASTS ───────────────────────────────── */
       const TOASTS = [
-        { t: "Alguém acabou de apoiar!", s: "Plano Avançado — R$ 299 ⚡" },
-        { t: "Nova contribuição chegou!", s: "Apoiador anônimo entrou 👀" },
-        { t: "2 pessoas visitando agora", s: "Não fique pra trás 😅" },
-        { t: "Meta avançando!", s: "R$ 4.880 restantes agora" },
+        { t: "Meta atingida e superada! 🎉", s: "R$ 14.389 arrecadados — 110,7%" },
+        { t: "Campanha encerrada com sucesso!", s: "Todas as vagas foram preenchidas 🔒" },
+        { t: "Lista de espera aberta!", s: "Garanta seu lugar no 2º lançamento 📋" },
+        { t: "Alguém entrou na lista de espera", s: "Não fique pra trás dessa vez 😅" },
         {
-          t: "Alguém do Rio acabou de apoiar",
-          s: "A galera toda está dentro 🌊",
+          t: "Drone confirmado! ✈️",
+          s: "Em breve novos voos épicos 🌊",
         },
-        { t: "Plano Intermediário esgotando!", s: "Restam apenas 5 vagas" },
-        { t: "Última vaga do Profissional!", s: "Não deixa escapar 👑" },
+        { t: "2º lançamento sendo planejado", s: "Liste de espera já disponível" },
+        { t: "Obrigado a todos os apoiadores!", s: "Os verdadeiros eu sei quem são 🏆" },
         {
-          t: "Matheus Kruger inspirou mais alguém",
-          s: "Seja como o Matheus 🏆",
+          t: "Matheus Kruger foi o MVP da campanha",
+          s: "Seja como o Matheus no próximo 🏆",
         },
       ];
 
